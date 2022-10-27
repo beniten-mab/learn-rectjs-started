@@ -5,7 +5,7 @@ const AppLayout = (props) => {
   const inactiveClasses = "bg-gray-800 py-2 px-5 text-white rounded";
   const activeClasses = "bg-green-700 py-2 px-5 text-white rounded shadow";
   return (
-    <div className="container mx-auto space-y-5 py-12 px-6">
+    <div className="container mx-auto space-y-5 py-12 px-3">
       <div className="bg-gray-200 rounded p-3 space-y-3">
         <h1 className="text-3xl font-bold">Movie Rating</h1>
         <div className="w-full lg:w-1/2">
