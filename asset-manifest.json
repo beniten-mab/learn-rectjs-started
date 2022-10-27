@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/learn-rectjs-started/static/css/main.b8d429f1.css",
-    "main.js": "/learn-rectjs-started/static/js/main.cffe5c4b.js",
+    "main.js": "/learn-rectjs-started/static/js/main.314adf87.js",
     "index.html": "/learn-rectjs-started/index.html",
     "main.b8d429f1.css.map": "/learn-rectjs-started/static/css/main.b8d429f1.css.map",
-    "main.cffe5c4b.js.map": "/learn-rectjs-started/static/js/main.cffe5c4b.js.map"
+    "main.314adf87.js.map": "/learn-rectjs-started/static/js/main.314adf87.js.map"
   },
   "entrypoints": [
     "static/css/main.b8d429f1.css",
-    "static/js/main.cffe5c4b.js"
+    "static/js/main.314adf87.js"
   ]
 }
