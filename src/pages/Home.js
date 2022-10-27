@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const baseUrl = "http://127.0.0.1:8000";
+const baseUrl = "https://x-django-rest-api.herokuapp.com";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
