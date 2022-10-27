@@ -1,5 +1,12 @@
+import { useEffect } from "react";
+import UnderDevelopemnt from "../../components/UnderDevelopment";
+
 const MovieCreatePage = () => {
-  return <h3>Create Movie Page</h3>;
+  useEffect(() => {
+    document.title = "Create a new movie - Movie Rating";
+  }, []);
+
+  return <UnderDevelopemnt />;
 };
 
 export default MovieCreatePage;

@@ -15,7 +15,9 @@ const HomePage = () => {
   };
 
   useEffect(() => {
+    document.title = "Home - Movie Rating";
     fetchMovies();
+    window.title = "Hello";
   }, []);
 
   return (

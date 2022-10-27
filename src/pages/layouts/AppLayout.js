@@ -5,12 +5,10 @@ const AppLayout = (props) => {
   const inactiveClasses = "bg-gray-800 py-2 px-5 text-white rounded";
   const activeClasses = "bg-green-700 py-2 px-5 text-white rounded shadow";
   return (
-    <div className="container mx-auto space-y-5 py-12">
+    <div className="container mx-auto space-y-5 py-12 px-6">
       <div className="bg-gray-200 rounded p-3 space-y-3">
-        <h1 className="text-3xl font-bold">
-          Movie Rating <code>(path: {pathname})</code>
-        </h1>
-        <div className="w-1/2">
+        <h1 className="text-3xl font-bold">Movie Rating</h1>
+        <div className="w-full lg:w-1/2">
           <p className="text-gray-700">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
             laudantium fuga laboriosam magni alias debitis, amet hic quo modi
@@ -19,8 +17,8 @@ const AppLayout = (props) => {
           </p>
         </div>
       </div>
-      <div className="flex gap-3">
-        <div className="w-1/3">
+      <div className="flex flex-col lg:flex-row gap-3">
+        <div className="w-full lg:w-1/3">
           <div className="bg-gray-900 space-y-5 p-3 rounded sidebar">
             <NavLink to="">
               <div
@@ -56,7 +54,7 @@ const AppLayout = (props) => {
             </NavLink>
           </div>
         </div>
-        <div className="w-2/3">{props.children}</div>
+        <div className="w-full lg:w-2/3">{props.children}</div>
       </div>
     </div>
   );

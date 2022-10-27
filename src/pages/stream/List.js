@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+import UnderDevelopemnt from "../../components/UnderDevelopment";
+
 const StreamListPage = () => {
-  return <h3>Stream List</h3>;
+  useEffect(() => {
+    document.title = "Stream Platform - Movie Rating";
+  }, []);
+  return <UnderDevelopemnt />;
 };
 
 export default StreamListPage;

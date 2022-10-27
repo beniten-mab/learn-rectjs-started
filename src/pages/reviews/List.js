@@ -1,5 +1,12 @@
+import { useEffect } from "react";
+import UnderDevelopemnt from "../../components/UnderDevelopment";
+
 const ReviewListPage = () => {
-  return <h3>Review List</h3>;
+  useEffect(() => {
+    document.title = "Reivews - Movie Rating";
+  }, []);
+
+  return <UnderDevelopemnt />;
 };
 
 export default ReviewListPage;
