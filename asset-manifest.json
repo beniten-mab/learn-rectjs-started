@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/learn-rectjs-started/static/css/main.b8d429f1.css",
-    "main.js": "/learn-rectjs-started/static/js/main.314adf87.js",
+    "main.css": "/learn-rectjs-started/static/css/main.2c77e15a.css",
+    "main.js": "/learn-rectjs-started/static/js/main.5561ea25.js",
+    "static/media/developer.png": "/learn-rectjs-started/static/media/developer.efacfba6d3a578b7d45b.png",
     "index.html": "/learn-rectjs-started/index.html",
-    "main.b8d429f1.css.map": "/learn-rectjs-started/static/css/main.b8d429f1.css.map",
-    "main.314adf87.js.map": "/learn-rectjs-started/static/js/main.314adf87.js.map"
+    "main.2c77e15a.css.map": "/learn-rectjs-started/static/css/main.2c77e15a.css.map",
+    "main.5561ea25.js.map": "/learn-rectjs-started/static/js/main.5561ea25.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8d429f1.css",
-    "static/js/main.314adf87.js"
+    "static/css/main.2c77e15a.css",
+    "static/js/main.5561ea25.js"
   ]
 }
