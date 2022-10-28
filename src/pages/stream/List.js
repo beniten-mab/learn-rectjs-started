@@ -1,23 +1,26 @@
-import axios from "axios";
+import axios from "../../axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
-// const baseUrl = "https://x-django-rest-api.herokuapp.com";
-const baseUrl = "http://127.0.0.1:8000";
+import IsLoading from "./../../components/IsLoading";
 
 const StreamListPage = () => {
   const [streams, setStream] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchStream = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/watch/stream`);
+      setIsLoading(true);
+      const response = await axios.get(`/watch/stream`);
       setStream(response.data);
-    } catch (error) {}
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
   };
 
   const deleteStreamPlatform = (stream) => {
-    axios.delete(`${baseUrl}/watch/stream/${stream.id}`).then(() => {
+    axios.delete(`/watch/stream/${stream.id}`).then(() => {
       setStream([]);
 
       toast.success("Stream platform has been deleted");
@@ -42,7 +45,10 @@ const StreamListPage = () => {
         </Link>
       </div>
       <div className="space-y-3">
-        {streams &&
+        {isLoading ? (
+          <IsLoading />
+        ) : (
+          streams &&
           streams.map((stream, key) => (
             <div
               className="flex bg-white p-4 rounded shadow space-y-2 group"
@@ -114,7 +120,8 @@ const StreamListPage = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        )}
       </div>
     </div>
   );

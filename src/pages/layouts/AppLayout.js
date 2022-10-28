@@ -19,7 +19,7 @@ const AppLayout = (props) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-3">
         <div className="w-full lg:w-1/3">
-          <div className="bg-gray-900 space-y-5 p-3 rounded sidebar">
+          <div className="bg-gray-900 space-y-5 p-3 rounded">
             <NavLink to="">
               <div
                 className={

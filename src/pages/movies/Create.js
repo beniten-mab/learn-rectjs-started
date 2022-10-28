@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "./../../axios";
 
 const MovieCreatePage = () => {
-  // const baseUrl = "https://x-django-rest-api.herokuapp.com";
-  const baseUrl = "http://127.0.0.1:8000";
-
   const [stream, setStream] = useState([]);
   const [validation, setValidation] = useState({});
   const [message, setMessage] = useState();
@@ -21,7 +18,7 @@ const MovieCreatePage = () => {
 
   const fetchStream = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/watch/stream`);
+      const response = await axios.get(`/watch/stream`);
       setStream(response.data);
     } catch (error) {}
   };
@@ -44,7 +41,7 @@ const MovieCreatePage = () => {
     setValidation({});
 
     axios
-      .post(`${baseUrl}/watch`, {
+      .post(`/watch`, {
         platform,
         title,
         storyline,

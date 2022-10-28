@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
-import axios from "axios";
+import axios from "./../../axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const MovieEditPage = () => {
-  // const baseUrl = "https://x-django-rest-api.herokuapp.com";
-  const baseUrl = "http://127.0.0.1:8000";
-
   const [stream, setStream] = useState([]);
   const [validation, setValidation] = useState({});
   const [message, setMessage] = useState();
@@ -23,14 +20,14 @@ const MovieEditPage = () => {
 
   const fetchStream = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/watch/stream`);
+      const response = await axios.get(`/watch/stream`);
       setStream(response.data);
     } catch (error) {}
   };
 
   const fetchMovie = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/watch/${params.movieId}`);
+      const response = await axios.get(`/watch/${params.movieId}`);
       const { data } = response;
       setPlatform(data.platform);
       setTitle(data.title);
@@ -58,7 +55,7 @@ const MovieEditPage = () => {
     setValidation({});
 
     axios
-      .put(`${baseUrl}/watch/${params.movieId}`, {
+      .put(`/watch/${params.movieId}`, {
         platform,
         title,
         storyline,

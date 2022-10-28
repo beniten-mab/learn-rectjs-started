@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
-import axios from "axios";
+import axios from "../../axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const StreamCreatePage = () => {
-  // const baseUrl = "https://x-django-rest-api.herokuapp.com";
-  const baseUrl = "http://127.0.0.1:8000";
-
   const [validation, setValidation] = useState({});
   const [message, setMessage] = useState();
 
@@ -33,7 +30,7 @@ const StreamCreatePage = () => {
     setValidation({});
 
     axios
-      .post(`${baseUrl}/watch/stream`, {
+      .post(`/watch/stream`, {
         name,
         about,
         website,
