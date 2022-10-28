@@ -25,22 +25,24 @@ const MovieEditPage = () => {
     } catch (error) {}
   };
 
-  const fetchMovie = async () => {
-    try {
-      const response = await axios.get(`/watch/${params.movieId}`);
-      const { data } = response;
-      setPlatform(data.platform);
-      setTitle(data.title);
-      setStoryline(data.storyline);
-      setActive(data.active);
-    } catch (error) {}
-  };
-
   useEffect(() => {
     document.title = "Edit movie - Movie Rating";
+
     fetchStream();
+
+    const fetchMovie = async () => {
+      try {
+        const response = await axios.get(`/watch/${params.movieId}`);
+        const { data } = response;
+        setPlatform(data.platform);
+        setTitle(data.title);
+        setStoryline(data.storyline);
+        setActive(data.active);
+      } catch (error) {}
+    };
+
     fetchMovie();
-  }, []);
+  }, [params.movieId]);
 
   const resetForm = () => {
     setPlatform("DEFAULT");

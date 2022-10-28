@@ -15,20 +15,21 @@ const StreamEditPage = () => {
   const nagivate = useNavigate();
   const params = useParams();
 
-  const fetchStream = async () => {
-    try {
-      const response = await axios.get(`/watch/stream/${params.streamId}`);
-      const { data } = response;
-      setName(data.name);
-      setAbout(data.about);
-      setWebsite(data.website);
-    } catch (error) {}
-  };
-
   useEffect(() => {
     document.title = "Update stream - Movie Rating";
+
+    const fetchStream = async () => {
+      try {
+        const response = await axios.get(`/watch/stream/${params.streamId}`);
+        const { data } = response;
+        setName(data.name);
+        setAbout(data.about);
+        setWebsite(data.website);
+      } catch (error) {}
+    };
+
     fetchStream();
-  }, []);
+  }, [params.streamId]);
 
   const resetForm = () => {
     setName("");
