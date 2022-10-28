@@ -48,16 +48,20 @@ const HomePage = () => {
               className="bg-white p-4 rounded shadow space-y-2 group"
               key={key}
             >
-              <h3 className="text-2xl font-bold">{movie.title}</h3>
-              <div className="space-y-1">
-                <p>{movie.storyline}</p>
-                <div className="flex gap-2 text-gray-500">
-                  <span>10 Stars</span>
-                  <span>—</span>
-                  <span>{movie.reviews.length} Reviews</span>
+              <div className="flex">
+                <div className="w-[80%]">
+                  <h3 className="text-2xl font-bold">{movie.title}</h3>
+                  <div className="space-y-1">
+                    <p>{movie.storyline}</p>
+                    <div className="flex gap-2 text-gray-500">
+                      <span>10 Stars</span>
+                      <span>—</span>
+                      <span>{movie.reviews.length} Reviews</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="hidden group-hover:block">
-                  <div className="flex gap-1">
+                <div className="w-[20%] hidden group-hover:block">
+                  <div className="flex items-center justify-end gap-1">
                     <Link
                       to={"/movie/edit/" + movie.id}
                       className="p-2 bg-green-500 text-white rounded flex gap-3"
