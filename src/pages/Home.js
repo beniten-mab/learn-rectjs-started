@@ -59,7 +59,7 @@ const HomePage = () => {
                 <div className="hidden group-hover:block">
                   <div className="flex gap-1">
                     <Link
-                      to={"/movie/edi/" + movie.id}
+                      to={"/movie/edit/" + movie.id}
                       className="p-2 bg-green-500 text-white rounded flex gap-3"
                     >
                       <svg

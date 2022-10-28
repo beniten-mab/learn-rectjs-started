@@ -3,6 +3,7 @@ import BackButton from "../../components/BackButton";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const MovieEditPage = () => {
   // const baseUrl = "https://x-django-rest-api.herokuapp.com";
@@ -13,11 +14,12 @@ const MovieEditPage = () => {
   const [message, setMessage] = useState();
 
   const [platform, setPlatform] = useState("DEFAULT");
-  const [title, setTitle] = useState(null);
-  const [storyline, setStoryline] = useState(null);
+  const [title, setTitle] = useState("");
+  const [storyline, setStoryline] = useState("");
   const [active, setActive] = useState(true);
 
   const nagivate = useNavigate();
+  const params = useParams();
 
   const fetchStream = async () => {
     try {
@@ -26,25 +28,37 @@ const MovieEditPage = () => {
     } catch (error) {}
   };
 
+  const fetchMovie = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/watch/${params.movieId}`);
+      const { data } = response;
+      setPlatform(data.platform);
+      setTitle(data.title);
+      setStoryline(data.storyline);
+      setActive(data.active);
+    } catch (error) {}
+  };
+
   useEffect(() => {
     document.title = "Edit movie - Movie Rating";
     fetchStream();
+    fetchMovie();
   }, []);
 
   const resetForm = () => {
     setPlatform("DEFAULT");
-    setTitle(null);
-    setStoryline(null);
+    setTitle("");
+    setStoryline("null");
     setActive(true);
   };
 
-  const onCreateMovie = (event) => {
+  const onUpdateMovie = (event) => {
     event.preventDefault();
 
     setValidation({});
 
     axios
-      .post(`${baseUrl}/watch`, {
+      .put(`${baseUrl}/watch/${params.movieId}`, {
         platform,
         title,
         storyline,
@@ -74,7 +88,7 @@ const MovieEditPage = () => {
   return (
     <div className="space-y-5">
       <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-bold">Create a new movie</h3>
+        <h3 className="text-2xl font-bold">Edit movie</h3>
         <BackButton />
       </div>
       {message ? (
@@ -84,7 +98,7 @@ const MovieEditPage = () => {
         </div>
       ) : null}
       <div>
-        <form className="grid grid-cols-1 gap-6" onSubmit={onCreateMovie}>
+        <form className="grid grid-cols-1 gap-6" onSubmit={onUpdateMovie}>
           <label className="block">
             <span className="text-gray-700">Stream Platform</span>
             <select
@@ -94,9 +108,9 @@ const MovieEditPage = () => {
                   : extranClasses
               }
               onChange={(e) => setPlatform(e.target.value)}
-              defaultValue={"DEFAULT"}
+              value={platform}
             >
-              <option value={"DEFAULT"} disabled>
+              <option defaultValue disabled>
                 Stream Platform
               </option>
               {stream &&
@@ -121,6 +135,7 @@ const MovieEditPage = () => {
                   : extranClasses
               }
               onChange={(e) => setTitle(e.target.value)}
+              value={title}
             />
             {validation && validation["title"] ? (
               <span className="text-red-600">{validation["title"]}</span>
@@ -137,6 +152,7 @@ const MovieEditPage = () => {
                   : extranClasses
               }
               onChange={(e) => setStoryline(e.target.value)}
+              value={storyline}
             ></textarea>
             {validation && validation["storyline"] ? (
               <span className="text-red-600">{validation["storyline"]}</span>
@@ -149,7 +165,7 @@ const MovieEditPage = () => {
                 <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    value={true}
+                    value={active}
                     checked={active}
                     onChange={() => setActive(!active)}
                   />
@@ -161,9 +177,9 @@ const MovieEditPage = () => {
           <div className="block">
             <button
               type="submit"
-              className="py-2 px-5 text-white bg-gray-800 rounded"
+              className="py-2 px-5 text-white bg-green-800 rounded"
             >
-              Save
+              Update
             </button>
           </div>
         </form>

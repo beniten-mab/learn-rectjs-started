@@ -12,9 +12,9 @@ const MovieCreatePage = () => {
   const [validation, setValidation] = useState({});
   const [message, setMessage] = useState();
 
-  const [platform, setPlatform] = useState("DEFAULT");
-  const [title, setTitle] = useState(null);
-  const [storyline, setStoryline] = useState(null);
+  const [platform, setPlatform] = useState(null);
+  const [title, setTitle] = useState("");
+  const [storyline, setStoryline] = useState("");
   const [active, setActive] = useState(true);
 
   const nagivate = useNavigate();
@@ -32,9 +32,9 @@ const MovieCreatePage = () => {
   }, []);
 
   const resetForm = () => {
-    setPlatform("DEFAULT");
-    setTitle(null);
-    setStoryline(null);
+    setPlatform("");
+    setTitle("");
+    setStoryline("");
     setActive(true);
   };
 

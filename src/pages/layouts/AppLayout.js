@@ -23,7 +23,7 @@ const AppLayout = (props) => {
             <NavLink to="">
               <div
                 className={
-                  ["/", "/movie/create"].includes(pathname)
+                  pathname === "/" || pathname.startsWith("/movie/")
                     ? activeClasses
                     : inactiveClasses
                 }
