@@ -10,3 +10,8 @@ body {
 .Toastify__toast-body {
     font-family: 'Raleway', sans-serif !important;
 }
+
+.required::after {
+    content: ' *';
+    @apply text-red-500 font-bold;
+}

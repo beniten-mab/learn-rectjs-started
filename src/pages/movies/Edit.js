@@ -100,7 +100,7 @@ const MovieEditPage = () => {
       <div>
         <form className="grid grid-cols-1 gap-6" onSubmit={onUpdateMovie}>
           <label className="block">
-            <span className="text-gray-700">Stream Platform</span>
+            <span className="text-gray-700 required">Stream Platform</span>
             <select
               className={
                 validation["platform"]
@@ -126,7 +126,7 @@ const MovieEditPage = () => {
           </label>
 
           <label className="block">
-            <span className="text-gray-700">Title</span>
+            <span className="text-gray-700 required">Title</span>
             <input
               type="text"
               className={
@@ -143,7 +143,7 @@ const MovieEditPage = () => {
           </label>
 
           <label className="block">
-            <span className="text-gray-700">Storyline</span>
+            <span className="text-gray-700 required">Storyline</span>
             <textarea
               rows="3"
               className={

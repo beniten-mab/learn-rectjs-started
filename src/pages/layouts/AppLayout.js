@@ -29,17 +29,19 @@ const AppLayout = (props) => {
                 }
               >
                 <h3 className="text-3xl font-bold">Movies</h3>
-                <p>Do not wast your time with it!</p>
+                <p>A film - also called a movie</p>
               </div>
             </NavLink>
             <NavLink to="/stream">
               <div
                 className={
-                  pathname === "/stream" ? activeClasses : inactiveClasses
+                  pathname.startsWith("/stream")
+                    ? activeClasses
+                    : inactiveClasses
                 }
               >
                 <h3 className="text-3xl font-bold">Stream Platform</h3>
-                <p>Do not wast your time with it!</p>
+                <p>Upload & broadcast video content</p>
               </div>
             </NavLink>
             <NavLink to="/reviews">
@@ -49,7 +51,7 @@ const AppLayout = (props) => {
                 }
               >
                 <h3 className="text-3xl font-bold">Reviews</h3>
-                <p>Do not wast your time with it!</p>
+                <p>Capture more great review content</p>
               </div>
             </NavLink>
           </div>

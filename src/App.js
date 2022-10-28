@@ -10,6 +10,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MovieEditPage from "./pages/movies/Edit";
 import PageNotFound from "./pages/errors/404";
+import StreamCreatePage from "./pages/stream/Create";
+import StreamEditPage from "./pages/stream/Edit";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="/movie/create" element={<MovieCreatePage />} />
           <Route path="/movie/edit/:movieId" element={<MovieEditPage />} />
           <Route path="/stream" element={<StreamListPage />} />
+          <Route path="/stream/create" element={<StreamCreatePage />} />
+          <Route path="/stream/edit/:streamId" element={<StreamEditPage />} />
           <Route path="/reviews" element={<ReviewListPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

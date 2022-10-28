@@ -86,7 +86,7 @@ const MovieCreatePage = () => {
       <div>
         <form className="grid grid-cols-1 gap-6" onSubmit={onCreateMovie}>
           <label className="block">
-            <span className="text-gray-700">Stream Platform</span>
+            <span className="text-gray-700 required">Stream Platform</span>
             <select
               className={
                 validation["platform"]
@@ -112,7 +112,7 @@ const MovieCreatePage = () => {
           </label>
 
           <label className="block">
-            <span className="text-gray-700">Title</span>
+            <span className="text-gray-700 required">Title</span>
             <input
               type="text"
               className={
@@ -128,7 +128,7 @@ const MovieCreatePage = () => {
           </label>
 
           <label className="block">
-            <span className="text-gray-700">Storyline</span>
+            <span className="text-gray-700 required">Storyline</span>
             <textarea
               rows="3"
               className={
