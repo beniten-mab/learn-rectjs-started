@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const MovieCreatePage = () => {
+const MovieEditPage = () => {
   // const baseUrl = "https://x-django-rest-api.herokuapp.com";
   const baseUrl = "http://127.0.0.1:8000";
 
@@ -27,7 +27,7 @@ const MovieCreatePage = () => {
   };
 
   useEffect(() => {
-    document.title = "Create a new movie - Movie Rating";
+    document.title = "Edit movie - Movie Rating";
     fetchStream();
   }, []);
 
@@ -172,4 +172,4 @@ const MovieCreatePage = () => {
   );
 };
 
-export default MovieCreatePage;
+export default MovieEditPage;

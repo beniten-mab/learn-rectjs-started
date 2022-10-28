@@ -6,7 +6,7 @@ const ReviewListPage = () => {
     document.title = "Reivews - Movie Rating";
   }, []);
 
-  return <UnderDevelopemnt />;
+  return <UnderDevelopemnt title="Reviews (Under Development)" />;
 };
 
 export default ReviewListPage;

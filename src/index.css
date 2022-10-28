@@ -5,3 +5,7 @@ body {
     background-color: #f1f1f1;
     font-family: 'Raleway', sans-serif;
 }
+
+.Toastify__toast-body {
+    font-family: 'Raleway', sans-serif !important;
+}

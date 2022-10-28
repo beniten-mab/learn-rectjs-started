@@ -5,7 +5,7 @@ const StreamListPage = () => {
   useEffect(() => {
     document.title = "Stream Platform - Movie Rating";
   }, []);
-  return <UnderDevelopemnt />;
+  return <UnderDevelopemnt title="Stream Platform (Under Development)" />;
 };
 
 export default StreamListPage;
